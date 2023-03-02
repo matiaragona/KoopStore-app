@@ -1,13 +1,11 @@
 import React from 'react'
-import Navbar from './Navbar/Navbar'
-import ItemListContainer from './Navbar/ItemListContainer'
+import ItemListContainer from './ItemListContainer/ItemListContainer'
 
 
 const landing = () => {
     
 return (
 <>
-    <Navbar/>
 
     <ItemListContainer greeting="Bienvenidos A koopstore"/>
 

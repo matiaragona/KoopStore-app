@@ -1,13 +1,12 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-
+import './style.css'
+import { Link } from "react-router-dom";
 const Navbar = () => {
 return (
     <>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-        KoopStore
-        </a>
+        <Link to={'/'}>koopstore</Link>
         <button
         class="navbar-toggler"
         type="button"
@@ -23,14 +22,10 @@ return (
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-            <a class="nav-link" href="#">
-                Inicio 
-            </a>
+            <Link to={'/product'}>Productos</Link>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">
-                Productos
-            </a>
+            <Link to={'/contact'}>Contacto</Link>
             </li>
             <CartWidget/>
         </ul>

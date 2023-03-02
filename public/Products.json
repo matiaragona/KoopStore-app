@@ -1,0 +1,14 @@
+[
+    {"id": 1,"nombre": "Buzo Adidas", "precio": 19300, "img": "/img/buzoAdidas.png"},
+    {"id": 2, "nombre": "Buzo Adidas Essentials", "precio": 20000, "img": "/img/buzoAdidasEssentials.png"},
+    {"id": 3, "nombre": "Buzo Adidas Graphic", "precio": 16500, "img": "/img/buzoAdidasGraphic.png"},
+    {"id": 4, "nombre": "Buzo H&M", "precio": 12000, "img": "/img/buzoH&M.png"},
+    {"id": 5, "nombre": "Buzo Puma", "precio": 9000, "img": "/img/buzoPuma.png"},
+    {"id": 6, "nombre": "Buzo Lacoste", "precio": 23000, "img": "/img/buzoLacoste.png"},
+    {"id":7, "nombre": "Campera Lacoste", "precio": 27000, "img":"/img/camperaLacoste.png"},
+    {"id": 8, "nombre": "Buzo Puma Negro", "precio": 9000, "img": "/img/buzoPuma2.png"},
+    {"id": 9, "nombre": "Buzo Puna Classic", "precio": 9999, "img": "/img/buzoPumaClassic.png"},
+    {"id": 10, "nombre":"Buzo Puma Downtown", "precio": 11999, "img":"/img/buzoPumaDowntown.png"},
+    {"id":11, "nombre": "Buzo Puma Red Bull", "precio": 14299, "img":"/img/buzoPumaRedBull.png"},
+    {"id":12, "nombre": "Buzo Puma RBR", "precio": 12300, "img": "/img/buzoPumaRBR.png"}
+]
