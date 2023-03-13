@@ -13,7 +13,7 @@ const ProductView = () => {
 
   return (
     <div className="container">
-      <h2>Productos</h2>
+      <h2 className='text-center'>Productos</h2>
       <div className="row">
         {data && data.map(producto => (
           <div className="col-md-4" key={producto.id}>

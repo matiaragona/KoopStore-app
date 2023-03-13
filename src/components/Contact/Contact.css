@@ -3,10 +3,11 @@ form {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 60px auto;
+    background-color: white;
 }
 
 label {
@@ -25,7 +26,7 @@ textarea {
 
 button[type="submit"] {
     background-color: black;
-    color: #fff;
+    color: white;
     border: none;
     padding: 10px;
     border-radius: 5px;
