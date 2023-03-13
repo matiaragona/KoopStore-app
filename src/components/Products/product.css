@@ -4,6 +4,8 @@
         border-radius: 5px;
         margin: 1rem;
         color: black;
+    box-shadow: 5px 5px 5px  grey;
+
 }
 .imgProductos {
     width: 200px;

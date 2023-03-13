@@ -8,6 +8,8 @@ form {
     max-width: 500px;
     margin: 60px auto;
     background-color: white;
+    box-shadow: 10px 10px 10px grey;
+
 }
 
 label {
@@ -33,8 +35,11 @@ button[type="submit"] {
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     margin-top: 20px;
+    box-shadow: 10px 4px 6px grey;
+
 }
 
 button[type="submit"]:hover {
     background-color: grey;
+    box-shadow: none;
 }
