@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import Landing from './components/Landing'
@@ -14,24 +13,25 @@ import BuzosDetail from './components/buzoDetail/BuzosDetail';
 
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-    <BrowserRouter>
+  <BrowserRouter>
     <Navbar/>
     
     
-    <Routes>
+        <Routes>
     
-    <Route exact path="/" element={<Landing/>}/>
-    <Route exact path="/Contact" element={<ContactView/>}/>
-    <Route exact path="/product" element={<ProductView/>}/>
-    <Route exact path="/buzo:id" element={<BuzosDetail/>}/>
+            <Route exact path="/" element={<Landing/>}/>
+            <Route exact path="/Contact" element={<ContactView/>}/>
+            <Route exact path="/product" element={<ProductView/>}/>
+            <Route exact path="/buzo:id" element={<BuzosDetail/>}/>
     
-    </Routes>
+        </Routes>
     
-    </BrowserRouter>
+  </BrowserRouter>
 
     
 
