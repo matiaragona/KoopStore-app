@@ -11,6 +11,7 @@ import ProductView from './components/Products/ProductView';
 import BuzosDetail from './components/buzoDetail/BuzosDetail';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import CartProvider from './Context/CartContext';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,10 +33,13 @@ const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+<React.StrictMode>
+  
+  <CartProvider>
     
-  <BrowserRouter>
-    <Navbar/>
+    <BrowserRouter>
+
+      <Navbar/>
     
     
         <Routes>
@@ -47,12 +51,13 @@ root.render(
     
         </Routes>
     
-  </BrowserRouter>
+    </BrowserRouter>
 
+  </CartProvider>  
     
 
     
-  </React.StrictMode>
+</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
