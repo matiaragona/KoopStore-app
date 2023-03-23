@@ -9,7 +9,23 @@ import Navbar from './components/Navbar/Navbar';
 import ContactView from './components/Contact/ContactView';
 import ProductView from './components/Products/ProductView';
 import BuzosDetail from './components/buzoDetail/BuzosDetail';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAHFVy7PbBcgJR8pO7eleZkmKE3-c7j5Jo",
+  authDomain: "koopstore-app.firebaseapp.com",
+  projectId: "koopstore-app",
+  storageBucket: "koopstore-app.appspot.com",
+  messagingSenderId: "960981549746",
+  appId: "1:960981549746:web:50cf3bffe4d10d5b23ffab"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
 
 

@@ -1,26 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import './product.css'
+import 'bootstrap/dist/css/bootstrap.css';
 
+
+import {doc, getDocs, getFirestore, collection} from 'firebase/firestore'
 const ProductView = () => {
-  const [data, setData] = useState(null);
+  const [items, setItems] = useState();
 
   useEffect(() => {
-    fetch('/Products.json')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error(error));
+    const db = getFirestore()
+    const buzoRef = collection (db, 'items')
+
+    getDocs(buzoRef).then((snapshot) => {
+      if(snapshot.docs.length === 0){
+        console.log("no hay resultados")
+      }
+      setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+    })
   }, []);
 
   return (
     <div className="container">
       <h2 className='text-center'>Productos</h2>
       <div className="row">
-        {data && data.map(producto => (
-          <div className="col-md-4" key={producto.id}>
+        {items && items.map(item => (
+          <div className="col-md-4" key={item.id}>
             <div className='card'>
-              <img src={producto.img} className='imgProductos' alt={producto.nombre} />
-              <h3>{producto.nombre}</h3>
-              <p>${producto.precio}</p>
+              <img src={item.imageId} className='imgProductos' alt={items.title} />
+              <h3>{item.title}</h3>
+              <p>${item.price}</p>
               <button className='colorBoton'>Agregar al carrito</button>
             </div>
           </div>
