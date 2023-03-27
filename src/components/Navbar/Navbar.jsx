@@ -3,6 +3,10 @@ import CartWidget from "./CartWidget";
 import './style.css'
 import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
+import ModalShow from "../ModalShow/ModalShow";
+
+
+
 const Navbar = () => {
     const { cart, getTotal, getTotalQuantity, clearCart } = useContext(CartContext)
 
@@ -17,7 +21,16 @@ const Navbar = () => {
     const handleMouseLeave = () => {
         setIsOpen(false)
     }
-return (
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    
+    const handleShow = () => setShow(true);
+
+    
+    
+    return (
     <>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <Link to={'/'}>koopstore</Link>
@@ -45,8 +58,8 @@ return (
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}>
                 <li>
+                    
                     <CartWidget/>
-
                     {cart.length > 0 && (
                 <span
                 className="badge badge-pill badge-danger ml-1"
@@ -72,14 +85,6 @@ return (
             <div className="product-details">
             <span className="product-title">{item.title}</span>
             <span className="product-price">${item.price}</span>
-            <div className="product-quantity">
-                <span>Cantidad: </span>
-                <div className="quantity-buttons">
-                <button onClick={() => decrementQuantity(item.id)}>-</button>
-                <span>{item.quantity}</span>
-                <button onClick={() => incrementQuantity(item.id)}>+</button>
-                </div>
-            </div>
             </div>
         </div>
         <button onClick={() => removeFromCart(item.id)} className="remove-button">x</button>
@@ -90,18 +95,19 @@ return (
     <span className="total-products"><u>Productos Totales:</u>{getTotalQuantity()}</span>
     <span className="total-price"><u>Total a Pagar:</u> ${getTotal()}</span>
     <button onClick={() => clearCart()} className='colorBoton clear-cart'>Vaciar</button>
+    <button className="colorBoton" onClick={handleShow}>Pagar</button>
     </div>
 </div>
 )}
 
 </div>
-
             
                 </li>
             </div>
         </ul>
         </div>
     </nav>
+    <ModalShow show={show} handleClose={handleClose}/>
     </>
 );
 };

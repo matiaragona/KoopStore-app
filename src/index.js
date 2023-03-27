@@ -3,19 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
+import  'bootstrap/dist/css/bootstrap.min.css' ;
 import Landing from './components/Landing'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import ContactView from './components/Contact/ContactView';
 import ProductView from './components/Products/ProductView';
 import BuzosDetail from './components/buzoDetail/BuzosDetail';
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import CartProvider from './Context/CartContext';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAHFVy7PbBcgJR8pO7eleZkmKE3-c7j5Jo",
   authDomain: "koopstore-app.firebaseapp.com",
