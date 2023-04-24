@@ -2,10 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import './product.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
-
-
 import {doc, getDocs, getFirestore, collection} from 'firebase/firestore'
 import { CartContext } from '../../Context/CartContext';
+import { Link } from 'react-router-dom';
 const ProductView = () => {
 
   const [items, setItems] = useState();
@@ -31,19 +30,29 @@ const ProductView = () => {
   return (
     <div className="container">
       <h2 className='text-center'>Productos</h2>
-      <div className="row">
-        {items && items.map(item => (
-          <div className="col-md-4" key={item.id}>
-            <div className='card'>
-              <img src={item.imageId} className='imgProductos' alt={items.title} />
-              <h3>{item.title}</h3>
-              <p>${item.price}</p>
-              <button className='colorBoton' onClick={() => addToCart(item, 1)}>Agregar al carrito</button>
-              
+      {items ? (
+        <div className="row">
+          {items.map(item => (
+            <div className="col-md-4" key={item.id}>
+              <div className='card'>
+                <img src={item.imageId} className='imgProductos' alt={item.title} />
+                <h3>{item.title}</h3>
+                          <Link to={`/item/${item.id}?docId=${item.id}`} className='miBoton'>
+                                        Ver detalles
+                          </Link>
+                <button className='colorBoton' onClick={() => addToCart(item, 1)}>Agregar al carrito</button>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="d-flex justify-content-center mt-5">
+            <div className='spinner-border' role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+      )}
     </div>
   );
 };

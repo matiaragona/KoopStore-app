@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import ContactView from './components/Contact/ContactView';
 import ProductView from './components/Products/ProductView';
-import BuzosDetail from './components/buzoDetail/BuzosDetail';
+import ItemDetail from './components/ItemDetail/ItemDetail';
 import { initializeApp } from "firebase/app";
 import CartProvider from './Context/CartContext';
 
@@ -43,9 +43,8 @@ root.render(
     
             <Route exact path="/" element={<Landing/>}/>
             <Route exact path="/Contact" element={<ContactView/>}/>
-            <Route exact path="/product" element={<ProductView/>}/>
-            <Route exact path="/buzo:id" element={<BuzosDetail/>}/>
-    
+            <Route exact path="/product" element={<ProductView/>}/>  
+            <Route exact path="/item/:itemId" element={<ItemDetail/>}/>   
         </Routes>
     
     </BrowserRouter>

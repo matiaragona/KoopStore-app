@@ -25,3 +25,21 @@
     background-color: grey;
     color: white;
 }
+
+.miBoton {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.miBoton:hover{
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}

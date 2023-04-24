@@ -15,6 +15,7 @@ const ModalShow = ({show, handleClose}) => {
     const handleNombreChange = (event) => {
         setNombre(event.target.value);
     };
+    
 
     const handleCorreoChange = (event) => {
         setCorreo(event.target.value);
