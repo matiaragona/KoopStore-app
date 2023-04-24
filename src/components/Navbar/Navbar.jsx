@@ -98,6 +98,7 @@ const Navbar = () => {
     <button className="colorBoton" onClick={handleShow}>Pagar</button>
     </div>
 </div>
+
 )}
 
 </div>

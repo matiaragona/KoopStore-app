@@ -1,36 +1,54 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { doc ,getDoc, getFirestore } from 'firebase/firestore';
+import { CartContext } from '../../Context/CartContext';
+
+import './ItemDetails.css';
+
 
 const ItemsDetails = () => {
-  const { id } = useParams();
+  const { itemId } = useParams();
   const [item, setItems] = useState(null);
 
+  const { addToCart, removeFromCart } = useContext(CartContext)
   useEffect(() => {
     const db = getFirestore();
-    const buzoRef = doc(db, 'items', id);
+    const buzoRef = doc(db, 'items', itemId);
 
-    buzoRef.getDoc().then((doc) => {
+    getDoc(buzoRef).then((doc) => {
       if (doc.exists()) {
         setItems({ id: doc.id, ...doc.data() });
       } else {
         console.log('No se encontró el producto');
       }
     });
-  }, [id]);
+  }, [itemId]);
 
-  return (
-    <div>
-      {item ? (
-        <div>
-          <h2>{item.title}</h2>
-          <p>{item.price}</p>
-        </div>
-      ) : (
-        <p>Cargando...</p>
-      )}
-    </div>
-  );
-};
+  
+    return (
+      <div className="product-details">
+        {item ? (
+          <>
+            <div className="product-details__image-container">
+              <img src={item.imageId} className="product-details__image" alt={item.title} />
+            </div>
+            <div className="product-details__info">
+              <h2 className="product-details__title">{item.title}</h2>
+              <p className="product-details__price">${item.price}</p>
+              <div className="product-details__buttons">
+                <button className="product-details__add-to-cart-button" onClick={() => addToCart(item, 1)}>
+                  Agregar al carrito
+                </button>
+                <Link to={'/product'}><button className="product-details__back-to-products-button">Volver a los demás productos</button></Link>
+              </div>
+            </div>
+          </>
+        ) : (
+          <p>Cargando...</p>
+        )}
+      </div>
+    );
+  };
+
 
 export default ItemsDetails;
